@@ -14,12 +14,12 @@ class TreeHeap{
 		int getIzquierdo(int);//Hijo Izquierdo
 		int getDerecho(int); //Hijo Derecho 
 		int getsize();
-		int getElemento(int);
+		
 		void imprimir(); //imprimir los datos 
 		void insertar(int); //funcion insertar
-		void PostOrden();
-		void InOrden();
-		void PreOrden();
+		void PostOrder();
+		void InOrder();
+		void PreOrder();
 		void broad(); //ancho
 		
 	
@@ -27,7 +27,6 @@ class TreeHeap{
 		int *H;
 		int size=0;
 		int maxtam;
-		int Elemento;
 		int parent(int);
 		int hijoIzquierdo(int);
 		int hijoDerecho(int);
