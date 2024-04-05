@@ -8,13 +8,14 @@ using namespace std;
 class TreeHeap{
 	public:
 		TreeHeap(int ); //constructor
-		
 		int obtener_Max(); //obtener el maximo
 		int getparent(int);//Padre
 		int getIzquierdo(int);//Hijo Izquierdo
 		int getDerecho(int); //Hijo Derecho 
 		int getsize();
-		void Eliminar(int);
+		void Eliminar(int); //Eliminar dato
+		void getbajar(int);
+		void getsubir(int);
 		void imprimir(); //imprimir los datos 
 		void insertar(int); //funcion insertar
 		void PostOrder();
