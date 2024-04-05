@@ -1,4 +1,7 @@
 #include "Treeheap.hpp" 
+#include<iostream>
+using std::cout;
+using std::endl;
 
 // Constructor de la clase TreeHeap
 TreeHeap::TreeHeap(int n){
@@ -20,7 +23,7 @@ void TreeHeap::insertar(int p){
 // Método para mantener la propiedad del heap subiendo un elemento en la posición j
 void TreeHeap::subir(int j){
     int a;
-    while(i>=1 && (H[parent(j)] < H[j])){
+    while(i>1 && (H[parent(j)] < H[j])){
         aux= H[parent(j)];
         H[parent(j)]=H[j];
         H[(j)]=a;
@@ -33,14 +36,14 @@ int TreeHeap::parent(int i){
     return ((i-1)/2);
 }
 
-// Método para obtener el máximo elemento del árbol (root)
+// Método para obtener el máximo elemento del árbol que en nuestro caso reia la raiz
 int TreeHeap::obtener_Max(){
-    int max=H[0];
+    int maximo=H[0];
     H[0]=H[size-1];
     size=size-1;
     bajar(0);
     
-    return max;
+    return maximo;
 }
 
 // Método para mantener la propiedad del heap bajando un elemento en la posición i
@@ -159,14 +162,14 @@ int Heap::PostOrden(int i){
         return i;
     }
     
-    PostOrden(hijoI(i));
+    PostOrden(hijoIzquierdo(i));
     
-    PostOrden(hijoD(i));
+    PostOrden(hijoDerecho(i));
     cout<<H[i]<<"  ";
     return i;
 }
 
-// Método para imprimir el árbol en inorden
+// Metodo para imprimir el árbol en inorden
 void TreeHeap::InOrden(){
     InOrden(0);
 }
@@ -176,9 +179,9 @@ int TreeHeap::InOrden(int i){
     if(i>=this->size){
         return i;
     }
-    InOrden(hijoI(i));
+    InOrden(hijoIzquierdo(i));
     cout<<H[i]<<"  ";
-    InOrden(hijoD(i));
+    InOrden(hijoDerecho(i));
     return i;
 }
 
@@ -193,24 +196,15 @@ int TreeHeap::PreOrden(int i){
         return i; 
     }
     cout<<H[i]<<"  ";
-    PreOrden(hijoI(i));
-    PreOrden(hijoD(i));
+    PreOrden(hijoIzquierdo(i));
+    PreOrden(hijoDerecho(i));
     return i;
 }
 
-// Método para imprimir el árbol por niveles
-void TreeHeap::Anchura(){
-    int l=0;
-    int aux=0;
-    cout<<" || ";
-    for(int i=0;i<this->size;i++){
-        
-        if(i<pow(2,l)+aux){
-            cout<<H[i]<<" ";
-        }else{
-            cout<<" H: "<<H[i]<<" ";
-            aux=i;
-            l=l+1;
-        }   
-    }
+void TreeHeap::Eliminar(int i){
+	b=H[i]; //guardamos en una variable el elemento que queremos eliminar
+	H[i]=H[this->size-1];// se toma el dato del ultimo nodo de nuestro Heap
+	this->size=size-1; //como eliminamos un elemento entonces actualizamos el tamaño
+	subir(n); //se coloca como prueba si es necesario subir
+	bajar(n); //se coloca como prueba si es necesario bajar
 }
