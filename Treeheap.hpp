@@ -14,7 +14,7 @@ class TreeHeap{
 		int getIzquierdo(int);//Hijo Izquierdo
 		int getDerecho(int); //Hijo Derecho 
 		int getsize();
-		
+		void Eliminar(int);
 		void imprimir(); //imprimir los datos 
 		void insertar(int); //funcion insertar
 		void PostOrder();
