@@ -208,3 +208,10 @@ void TreeHeap::Eliminar(int i){
 	subir(n); //se coloca como prueba si es necesario subir
 	bajar(n); //se coloca como prueba si es necesario bajar
 }
+
+//---------------------------------------------------------------------
+//-----------modificaacionn-------------------------------------
+//Insertar dos valores
+void TreeHeap::Insertar(int p, int b){
+   suma=p+b; // suma de dos valores
+}

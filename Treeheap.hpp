@@ -22,6 +22,9 @@ class TreeHeap{
 		void InOrder();
 		void PreOrder();
 		void broad(); //ancho
+		void Insertar(int,int); //Insertar dos valores
+		void Insertar(int,int,int); //Insertar dos valores
+		
 		
 	
 	private:

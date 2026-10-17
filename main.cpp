@@ -22,6 +22,8 @@ int main(){
     H.insertar(92); 
     H.imprimir();
     H.insertar(34);
-   
+
+    H.insertar(1,2) //suma de dos valores
+   H.imprimir();//imprimos nuestro Heap
  return 0;
 }
